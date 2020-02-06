@@ -1,0 +1,432 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+	background: transparent;
+}
+
+.banner {
+	text-align: center;
+	font-style: italic;
+	color: grey;
+	text-shadow: 3px 2px black;
+	padding-top: 5px;
+	position: relative;
+	z-index: 4;
+
+}
+
+.modal-content {
+	background: linear-gradient(0deg, rgb(225, 139, 21) 0%, rgba(244, 218, 74, 0.2) 100%) !important;
+	flex-direction: row !important;
+	text-align: center;
+	color: white;
+}
+
+.modal-header {
+	color: #f9c232;
+}
+
+/*form styles*/
+#msform {
+	text-align: center;
+	position: relative;
+	margin-top: 10%;
+	z-index: 5;
+}
+
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 0px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+
+
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/*inputs*/
+#msform input,
+#msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 0px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+	text-align: center;
+}
+
+#msform input:focus,
+#msform textarea:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: 1px solid #6699ff;
+	outline-width: 0;
+	transition: All 0.5s ease-in;
+	-webkit-transition: All 0.5s ease-in;
+	-moz-transition: All 0.5s ease-in;
+	-o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msform .action-button {
+	width: 300px;
+	/*Change size to fit screen*/
+	background: #3366ff;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 25px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #6699ff;
+}
+
+#msform .action-button-previous {
+	width: 300px;
+	/*Change size to fit screen*/
+	background: #C5C5F1;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 25px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+}
+
+/*headings*/
+.fs-title {
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
+
+/* Rain start */
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	position: relative;
+	z-index: 4;
+	margin: 0;
+	overflow: hidden;
+	background: linear-gradient(to bottom, #202020, #111119);
+}
+
+.rain {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100% !important;
+	z-index: 4;
+}
+
+.rain.back-row {
+	position: absolute;
+	z-index: 4;
+	bottom: 60px;
+	opacity: 0.5;
+}
+
+body.back-row-toggle .rain.back-row {
+	display: block;
+}
+
+.drop {
+	position: absolute;
+	bottom: 100%;
+	width: 15px;
+	height: 120px;
+	pointer-events: none;
+	animation: drop 0.5s linear infinite;
+}
+
+@keyframes drop {
+	0% {
+		transform: translateY(0vh);
+	}
+
+	75% {
+		transform: translateY(90vh);
+	}
+
+	100% {
+		transform: translateY(90vh);
+	}
+}
+
+.stem {
+	width: 1px;
+	height: 60%;
+	margin-left: 7px;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+	animation: stem 0.5s linear infinite;
+}
+
+@keyframes stem {
+	0% {
+		opacity: 1;
+	}
+
+	65% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.splat {
+	width: 15px;
+	height: 10px;
+	border-top: 2px dotted rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	opacity: 1;
+	transform: scale(0);
+	animation: splat 0.5s linear infinite;
+	display: none;
+}
+
+body.splat-toggle .splat {
+	display: block;
+}
+
+@keyframes splat {
+	0% {
+		opacity: 1;
+		transform: scale(0);
+	}
+
+	80% {
+		opacity: 1;
+		transform: scale(0);
+	}
+
+	90% {
+		opacity: 0.5;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+}
+
+
+
+body.single-toggle .drop {
+	display: none;
+}
+
+body.single-toggle .drop:nth-child(10) {
+	display: block;
+}
+
+/* Clouds */
+#clouds {
+	position: fixed;
+	top: 1px z-index: -1;
+	padding: 100px 0;
+	top: -50px;
+
+
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px;
+	height: 60px;
+	background: #fff;
+
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+
+	position: relative;
+	z-index: 1;
+}
+
+.cloud:before,
+.cloud:after {
+	content: '';
+	position: absolute;
+	background: #fff;
+	width: 100px;
+	height: 80px;
+	position: absolute;
+	top: -15px;
+	left: 10px;
+
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px;
+	height: 120px;
+	top: -55px;
+	left: auto;
+	right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 200px;
+
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6;
+	/*opacity proportional to the size*/
+
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px;
+	top: -200px;
+
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8;
+	/*opacity proportional to the size*/
+
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px;
+	top: -250px;
+
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75;
+	/*opacity proportional to the size*/
+
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px;
+	top: -150px;
+	right: 100px;
+
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8;
+	/*opacity proportional to the size*/
+
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {
+		margin-left: 1000px;
+	}
+
+	100% {
+		margin-left: -1000px;
+	}
+}
+
+@-moz-keyframes moveclouds {
+	0% {
+		margin-left: 1000px;
+	}
+
+	100% {
+		margin-left: -1000px;
+	}
+}
+
+@-o-keyframes moveclouds {
+	0% {
+		margin-left: 1000px;
+	}
+
+	100% {
+		margin-left: -1000px;
+	}
+}
